@@ -1,26 +1,35 @@
-package sit707;
+package sit707_week1;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+/**
+ * Hello world!
+ *	
+ * @author Ahsan Habib
+ */
 public class Main {
-	
-	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "/Users/vijul/Downloads");
-		
-		WebDriver driver = new ChromeDriver();
-		System.out.println(driver);
-		
-		driver.get("https://www.google.com");
-		
-		try {
-			Thread.sleep(5*1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
-		driver.close();
-		
-	}
 
+	/*
+	 * Main entry point of a Java program.
+	 */
+	public static void main(String[] args) {
+
+		int choice = 4;
+
+		switch(choice){
+		case 1:
+			SeleniumOperations.open_chrome_and_close();
+			break;
+		case 2:
+			SeleniumOperations.open_chrome_maximize_close();
+			break;
+		case 3:
+			SeleniumOperations.load_web_page_close();
+			break;
+		case 4:
+			SeleniumOperations.open_chrome_loadpage_resize_close();
+			break;
+		default:
+			System.out.println("Invalid choice.");
+			break;
+		}
+	}
 }
